@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "build": "docker build -t andrewjohnburgess/${npm_package_name}:${npm_package_version} .",
-    "publish": "docker push andrewjohnburgess/${npm_package_name}:${npm_package_version}"
+    "build-image": "docker build -t andrewjohnburgess/${npm_package_name}:${npm_package_version} .",
+    "publish-image": "docker push andrewjohnburgess/${npm_package_name}:${npm_package_version}"
   },
   "author": "Andrew Burgess",
   "license": "ISC",
