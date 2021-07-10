@@ -260,6 +260,17 @@ async function loadFilms() {
       formats: ["SD", "HD"]
     };
   });
+  films.forEach(film => {
+    if (film.id % 4 == 1) {
+      film.formats = ["SD"]
+    } else if (film.id % 4 == 2) {
+      film.formats = ["HD"]
+    } else if (film.id % 4 == 3) {
+      film.formats = ["SD", "HD"]
+    } else if (film.id % 4 == 0) {
+      film.formats = ["SD", "HD", "4K"]
+    }
+  });
   genres = [...new Set(films.flatMap(f => f.genres))].map(g => g.toLowerCase()).sort();
 }
 
