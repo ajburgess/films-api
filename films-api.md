@@ -89,6 +89,8 @@ When making this request, you must supply a Bearer authentication token to ident
 
 Get the details of a specific one of your orders.
 
+When making this request, you must supply a Bearer authentication token to identify yourself (see above).
+
 ## Update an order
 
 ```PATCH /orders/:orderId```
