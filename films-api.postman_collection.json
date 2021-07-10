@@ -9,7 +9,14 @@
 			"name": "Get all films",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"url": {
 					"raw": "{{baseUrl}}/films",
 					"host": [
@@ -26,7 +33,13 @@
 			"name": "Get all films by genre",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "{{baseUrl}}/films?genre=sci-fi&limit=5",
 					"host": [
@@ -53,15 +66,22 @@
 			"name": "Get specific film by ID",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"url": {
-					"raw": "{{baseUrl}}/films/123",
+					"raw": "{{baseUrl}}/films/125",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"films",
-						"123"
+						"125"
 					]
 				}
 			},
@@ -253,7 +273,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8000"
+			"value": "https://films-api.qaalabs.com"
 		},
 		{
 			"key": "token",
