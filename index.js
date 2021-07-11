@@ -6,6 +6,7 @@ import cryptoRandomString from 'crypto-random-string';
 
 const app = express();
 app.use(express.json());
+app.set('json spaces', 2);
 
 const intRegExp = /^\d+$/;
 const creditCardNumberRegExp = /^\d{16}$/;
