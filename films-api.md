@@ -110,3 +110,9 @@ For example:
   "format": "HD"
 }
 ```
+
+## Delete an order
+
+```DELETE /orders/:orderId```
+
+When making this request, you must supply a Bearer authentication token to identify yourself (see above).

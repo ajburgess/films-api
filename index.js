@@ -14,7 +14,7 @@ const creditCardNumberRegExp = /^\d{16}$/;
 let films;
 let genres;
 const registrations = [];
-const orders = [];
+let orders = [];
 
 function getRegistration(req) {
   const authorization = req.headers.authorization;
@@ -116,6 +116,21 @@ app.post("/orders", (req, res) => {
   res.status(201).json({
     id: order.id
   });
+});
+
+app.delete("/orders/:orderId", (req, res) => {
+  const registration = getRegistration(req);
+  if (!registration) {
+    return res.status(401).json({ error: "You must provide a valid Bearer authentication token" });
+  }
+  const orderId = req.params.orderId;
+  const order = getOrderByTokenAndOrderId(registration.token, orderId);
+  if (!order) {
+    return res.status(404).json({ error: `Order not found with ID ${orderId}` });
+  }
+  const index = orders.indexOf(order);
+  orders.splice(index, 1);
+  res.status(204).end();
 });
 
 app.patch("/orders/:orderId", (req, res) => {
