@@ -1,4 +1,4 @@
-# Films API (v6)
+# Films API
 
 ## Get all films
 
